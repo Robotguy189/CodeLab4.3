@@ -23,6 +23,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="32dp"
         android:text="@string/name_label_text"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/order_textview"/>
 
@@ -34,6 +35,7 @@
         android:layout_marginLeft="8dp"
         android:ems="10"
         android:hint="@string/enter_name_hint"
+        android:textSize="18sp"
         android:inputType="textPersonName"
         app:layout_constraintBaseline_toBaselineOf="@+id/name_label"
         app:layout_constraintStart_toEndOf="@+id/name_label"
@@ -47,6 +49,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
         android:text="@string/address_label_text"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_label"/>
 
@@ -59,6 +62,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/enter_address_hint"
+        android:textSize="18sp"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
         app:layout_constraintBaseline_toBaselineOf="@+id/address_label"
@@ -72,6 +76,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
         android:text="@string/phone_label_text"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address_text" />
 
@@ -83,6 +88,7 @@
         android:layout_marginLeft="8dp"
         android:ems="10"
         android:hint="@string/enter_phone_hint"
+        android:textSize="18sp"
         android:importantForAutofill="no"
         android:inputType="phone"
         app:layout_constraintBaseline_toBaselineOf="@+id/phone_label"
@@ -96,6 +102,7 @@
         android:layout_marginLeft="24dp"
         android:layout_marginTop="24dp"
         android:text="@string/note_label_text"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone_label" />
 
@@ -108,9 +115,55 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/enter_note_hint"
+        android:textSize="18sp"
         android:inputType="textCapSentences|textMultiLine"
         app:layout_constraintBaseline_toBaselineOf="@+id/note_label"
         app:layout_constraintStart_toEndOf="@+id/note_label"
         android:importantForAutofill="no" />
+
+    <TextView
+        android:id="@+id/delivery_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/choose_delivery_method"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/note_text" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/delivery_label" >
+
+        <RadioButton
+            android:id="@+id/sameday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/same_day_messenger_service" />
+
+        <RadioButton
+            android:id="@+id/nextday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/next_day_ground_delivery" />
+
+        <RadioButton
+            android:id="@+id/pickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"
+            android:text="@string/pick_up" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
