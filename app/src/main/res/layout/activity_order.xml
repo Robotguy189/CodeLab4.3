@@ -25,7 +25,7 @@
         android:text="@string/name_label_text"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/order_textview"/>
+        app:layout_constraintTop_toBottomOf="@+id/order_textview" />
 
     <EditText
         android:id="@+id/name_text"
@@ -35,11 +35,11 @@
         android:layout_marginLeft="8dp"
         android:ems="10"
         android:hint="@string/enter_name_hint"
-        android:textSize="18sp"
+        android:importantForAutofill="no"
         android:inputType="textPersonName"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/name_label"
-        app:layout_constraintStart_toEndOf="@+id/name_label"
-        android:importantForAutofill="no" />
+        app:layout_constraintStart_toEndOf="@+id/name_label" />
 
     <TextView
         android:id="@+id/address_label"
@@ -51,7 +51,7 @@
         android:text="@string/address_label_text"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name_label"/>
+        app:layout_constraintTop_toBottomOf="@+id/name_label" />
 
     <EditText
         android:id="@+id/address_text"
@@ -62,9 +62,9 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/enter_address_hint"
-        android:textSize="18sp"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/address_label"
         app:layout_constraintStart_toEndOf="@+id/address_label" />
 
@@ -82,15 +82,15 @@
 
     <EditText
         android:id="@+id/phone_text"
-        android:layout_width="wrap_content"
+        android:layout_width="134dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:ems="10"
         android:hint="@string/enter_phone_hint"
-        android:textSize="18sp"
         android:importantForAutofill="no"
         android:inputType="phone"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/phone_label"
         app:layout_constraintStart_toEndOf="@+id/phone_label" />
 
@@ -115,11 +115,11 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/enter_note_hint"
-        android:textSize="18sp"
+        android:importantForAutofill="no"
         android:inputType="textCapSentences|textMultiLine"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/note_label"
-        app:layout_constraintStart_toEndOf="@+id/note_label"
-        android:importantForAutofill="no" />
+        app:layout_constraintStart_toEndOf="@+id/note_label" />
 
     <TextView
         android:id="@+id/delivery_label"
@@ -136,11 +136,11 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
         android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/delivery_label" >
+        app:layout_constraintTop_toBottomOf="@id/delivery_label">
 
         <RadioButton
             android:id="@+id/sameday"
@@ -165,5 +165,18 @@
             android:onClick="onRadioButtonClicked"
             android:text="@string/pick_up" />
     </RadioGroup>
+
+    <Spinner
+        android:id="@+id/label_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/phone_text"
+        app:layout_constraintTop_toBottomOf="@+id/address_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
